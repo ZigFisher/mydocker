@@ -33,7 +33,7 @@ Quick Start
 	# You can see new runing container (testserv)
 	docker ps
 
-
+	# Enjoy ! >;)
 
 Links
 =====
