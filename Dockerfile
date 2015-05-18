@@ -8,10 +8,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
 
 # Install packages
-RUN apt-get -qq -y --no-install-recommends install runit
-RUN apt-get -qq -y --no-install-recommends install apt-utils
-RUN apt-get -qq -y --no-install-recommends install sudo screen mc
+RUN apt-get -qq -y --no-install-recommends install apt-utils runit
 RUN apt-get -qq -y --no-install-recommends install openssh-server openssh-client
+RUN apt-get -qq -y --no-install-recommends install sudo screen mc
 
 # Setup a simple root password
 RUN echo "root:mypasswd" | chpasswd
@@ -28,7 +27,7 @@ RUN /bin/echo -e 'exec /usr/sbin/sshd -D' >> /etc/service/sshd/run
 RUN chown root.root /etc/service/sshd/run && chmod 755 /etc/service/sshd/run
 
 # Clean system
-RUN apt-get -qq -y clean
+#RUN apt-get -qq -y clean
 
 # Launch runit.
 ENTRYPOINT ["/usr/sbin/runsvdir-start"]
