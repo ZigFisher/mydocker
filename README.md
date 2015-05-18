@@ -30,6 +30,10 @@ Quick Start
   # Create and start container
   docker run -d -p 1022:22/tcp --name testserv wheezy
 
+  # You can see new runing container (testserv)
+  docker ps
+
+
 
 Usage
 =====
