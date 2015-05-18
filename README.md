@@ -18,20 +18,20 @@ script; if not, please visit http://www.gnu.org/copyleft/gpl.html for more infor
 Quick Start
 ===========
 
-  # Download repo
-  git clone https://github.com/ZigFisher/MyDocker.git
+	# Download repo
+	git clone https://github.com/ZigFisher/MyDocker.git
 
-  # Build image from Dockerfile
-  docker build -t wheezy -f ./Dockerfile .
+	# Build image from Dockerfile
+	docker build -t wheezy -f ./Dockerfile .
 
-  # You can see new builded image (wheezy)
-  docker images
+	# You can see new builded image (wheezy)
+	docker images
 
-  # Create and start container
-  docker run -d -p 1022:22/tcp --name testserv wheezy
+	# Create and start container
+	docker run -d -p 1022:22/tcp --name testserv wheezy
 
-  # You can see new runing container (testserv)
-  docker ps
+	# You can see new runing container (testserv)
+	docker ps
 
 
 
