@@ -35,13 +35,7 @@ Quick Start
 
 
 
-Usage
+Links
 =====
 
-wget https://github.com/tianon/docker-brew-debian/raw/dist/wheezy/rootfs.tar.xz
-
-docker run -d --name=test2 wheezy01
-
-docker create --name=test2 wheezy01
-
-docker run -d -p 1022:22/tcp --name testing wheezy01
+	wget https://github.com/tianon/docker-brew-debian/raw/dist/wheezy/rootfs.tar.xz
