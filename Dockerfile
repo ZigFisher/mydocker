@@ -6,15 +6,15 @@ ADD rootfs.tar.xz /
 # Disable interactive
 ENV DEBIAN_FRONTEND noninteractive
 
-# Set timezone
-RUN echo "Europe/Moscow" > /etc/timezone
-RUN dpkg-reconfigure -f noninteractive tzdata
-
 # Resolve problem with execution policy-rc.d
 RUN echo "exit 0" > /usr/sbin/policy-rc.d && chmod +x /usr/sbin/policy-rc.d
 
 # Update and upgrade
 RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
+
+# Set timezone
+RUN echo "Europe/Moscow" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Install packages
 RUN apt-get -qq -y --no-install-recommends install apt-utils runit
