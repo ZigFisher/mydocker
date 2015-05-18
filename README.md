@@ -15,12 +15,20 @@ You should have received a copy of the GNU Lesser General Public License along w
 script; if not, please visit http://www.gnu.org/copyleft/gpl.html for more information.
 
 
+Quick Start
+===========
+
+  git clone https://github.com/ZigFisher/MyDocker.git
+
+  docker build -t wheezy -f ./Dockerfile .
+
+
+
+
 Usage
 =====
 
 wget https://github.com/tianon/docker-brew-debian/raw/dist/wheezy/rootfs.tar.xz
-
-docker build -t wheezy01 -f ./Dockerfile .
 
 docker run -d --name=test2 wheezy01
 
