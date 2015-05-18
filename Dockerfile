@@ -6,7 +6,7 @@ ADD rootfs.tar.xz /
 # Disable interactive
 ENV DEBIAN_FRONTEND noninteractive
 
-# Resolve problem "invoke-rc.d: policy-rc.d denied execution of start/stop/restart"
+# Resolve problem with execution policy-rc.d
 RUN echo "exit 0" > /usr/sbin/policy-rc.d && chmod +x /usr/sbin/policy-rc.d
 
 # Update and upgrade
