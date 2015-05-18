@@ -6,6 +6,10 @@ ADD rootfs.tar.xz /
 # Disable interactive
 ENV DEBIAN_FRONTEND noninteractive
 
+# Set timezone
+RUN echo "Europe/Simferopol" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+
 # Resolve problem with execution policy-rc.d
 RUN echo "exit 0" > /usr/sbin/policy-rc.d && chmod +x /usr/sbin/policy-rc.d
 
