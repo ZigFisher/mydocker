@@ -7,7 +7,7 @@ ADD rootfs.tar.xz /
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set timezone
-RUN echo "Europe/Simferopol" > /etc/timezone
+RUN echo "Europe/Moscow" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Resolve problem with execution policy-rc.d
