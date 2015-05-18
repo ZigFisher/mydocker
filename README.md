@@ -1,7 +1,7 @@
 MyDocker
 ========
 
-My view of the Docker
+My view of the Docker (pre-alpha version).
 
 
 License
