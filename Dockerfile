@@ -1,19 +1,19 @@
-FROM scratch
-
 MAINTAINER Igor Zalatov <flyrouter@gmail.com>
 
+# Create base system
+FROM scratch
 ADD rootfs.tar.xz /
 
-
-# Update, upgrade and clean
+# Update and upgrade
 RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
 
 # Install packages
-RUN apt-get -qq -y install runit
-#RUN apt-get -qq -y --no-install-recommends install sudo screen mc
-#RUN apt-get -qq -y --no-install-recommends install openssh-server openssh-client
+RUN apt-get -qq -y --no-install-recommends install runit
+RUN apt-get -qq -y --no-install-recommends install apt-utils
+RUN apt-get -qq -y --no-install-recommends install sudo screen mc
+RUN apt-get -qq -y --no-install-recommends install openssh-server openssh-client
 
-# Setup a root password
+# Setup a simple root password
 RUN echo "root:mypasswd" | chpasswd
 
 # Expose the SSH port
