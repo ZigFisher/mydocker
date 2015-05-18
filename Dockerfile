@@ -1,7 +1,8 @@
 # Create base system
 FROM scratch
-ADD rootfs.tar.xz /
 MAINTAINER Igor Zalatov <flyrouter@gmail.com>
+ADD rootfs.tar.xz /
+ENV DEBIAN_FRONTEND noninteractive
 
 # Update and upgrade
 RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
