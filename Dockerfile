@@ -19,7 +19,7 @@ RUN echo "root:mypasswd" | chpasswd
 EXPOSE 22
 
 # Now make sure that runit will launch SSHD, via runit.
-RUN mkdir /etc/service/sshd
+RUN mkdir -p /etc/service/sshd /var/run/sshd
 RUN /bin/echo -e '#!/bin/sh' > /etc/service/sshd/run
 RUN /bin/echo -e 'exec /usr/sbin/sshd -D' >> /etc/service/sshd/run
 
@@ -27,7 +27,7 @@ RUN /bin/echo -e 'exec /usr/sbin/sshd -D' >> /etc/service/sshd/run
 RUN chown root.root /etc/service/sshd/run && chmod 755 /etc/service/sshd/run
 
 # Clean system
-#RUN apt-get -qq -y clean
+RUN apt-get -qq -y clean
 
 # Launch runit.
 ENTRYPOINT ["/usr/sbin/runsvdir-start"]
