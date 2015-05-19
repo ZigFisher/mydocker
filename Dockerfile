@@ -1,7 +1,8 @@
 # Create base system
 FROM scratch
 MAINTAINER Igor Zalatov <flyrouter@gmail.com>
-ADD debian_wheezy_rootfs.tar.xz /
+#ADD debian_wheezy_rootfs.tar.xz /
+ADD debian_jessie_rootfs.tar.xz /
 
 # Disable interactive
 ENV DEBIAN_FRONTEND noninteractive
