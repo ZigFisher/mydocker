@@ -18,9 +18,11 @@ RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
 
 # Install packages
 RUN apt-get -qq -y --no-install-recommends install apt-utils runit
-RUN apt-get -qq -y --no-install-recommends install cron
+RUN apt-get -qq -y --no-install-recommends install ssmtp bsd-mailx ntpdate
 RUN apt-get -qq -y --no-install-recommends install openssh-server openssh-client
-RUN apt-get -qq -y --no-install-recommends install sudo screen mc
+RUN apt-get -qq -y --no-install-recommends install git etckeeper sudo screen mc
+RUN apt-get -qq -y --no-install-recommends install cron 
+RUN apt-get -qq -y --no-install-recommends install icinga-core icli
 
 # Setup a simple root password
 RUN echo "root:mypasswd" | chpasswd
