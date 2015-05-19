@@ -18,6 +18,7 @@ RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
 
 # Install packages
 RUN apt-get -qq -y --no-install-recommends install apt-utils runit
+RUN apt-get -qq -y --no-install-recommends install cron
 RUN apt-get -qq -y --no-install-recommends install openssh-server openssh-client
 RUN apt-get -qq -y --no-install-recommends install sudo screen mc
 
@@ -32,8 +33,13 @@ RUN mkdir -p /etc/service/sshd /var/run/sshd
 RUN /bin/echo -e '#!/bin/sh' > /etc/service/sshd/run
 RUN /bin/echo -e 'exec /usr/sbin/sshd -D' >> /etc/service/sshd/run
 
+# Now make sure that runit will launch CRON, via runit.
+RUN mkdir -p /etc/service/cron /var/run/cron
+RUN /bin/echo -e '#!/bin/sh' > /etc/service/cron/run
+RUN /bin/echo -e 'exec /usr/sbin/cron -f' >> /etc/service/cron/run
+
 # Make sure our run-script is executable.
-RUN chown root.root /etc/service/sshd/run && chmod 755 /etc/service/sshd/run
+RUN chown root.root /etc/service/*/run && chmod 755 /etc/service/*/run
 
 # Clean system
 RUN apt-get -qq -y clean
