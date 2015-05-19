@@ -34,19 +34,19 @@ EXPOSE 22
 # Now make sure that runit will launch SSHD, via runit.
 RUN mkdir -p /etc/service/sshd /var/run/sshd
 RUN /bin/echo -e '#!/bin/sh' > /etc/service/sshd/run
-RUN /bin/echo -e 'exec 2>&1' > /etc/service/sshd/run
+RUN /bin/echo -e 'exec 2>&1' >> /etc/service/sshd/run
 RUN /bin/echo -e 'exec /usr/sbin/sshd -D' >> /etc/service/sshd/run
 
 # Now make sure that runit will launch CRON, via runit.
 RUN mkdir -p /etc/service/cron /var/run/cron
 RUN /bin/echo -e '#!/bin/sh' > /etc/service/cron/run
-RUN /bin/echo -e 'exec 2>&1' > /etc/service/cron/run
+RUN /bin/echo -e 'exec 2>&1' >> /etc/service/cron/run
 RUN /bin/echo -e 'exec /usr/sbin/cron -f' >> /etc/service/cron/run
 
 # Now make sure that runit will launch ICINGA, via runit.
 RUN mkdir -p /etc/service/icinga /var/run/icinga
 RUN /bin/echo -e '#!/bin/sh' > /etc/service/icinga/run
-RUN /bin/echo -e 'exec 2>&1' > /etc/service/icinga/run
+RUN /bin/echo -e 'exec 2>&1' >> /etc/service/icinga/run
 RUN /bin/echo -e 'exec /usr/sbin/icinga /etc/icinga/icinga.cfg' >> /etc/service/icinga/run
 
 # Make sure our run-script is executable.
