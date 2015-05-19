@@ -38,4 +38,5 @@ Quick Start
 Links
 =====
 
-	wget https://github.com/tianon/docker-brew-debian/raw/dist/wheezy/rootfs.tar.xz
+	wget -O debian_wheezy_rootfs.tar.gz https://github.com/tianon/docker-brew-debian/raw/dist/wheezy/rootfs.tar.xz
+	wget -O debian_jessie_rootfs.tar.gz https://github.com/tianon/docker-brew-debian/raw/dist/jessie/rootfs.tar.xz
