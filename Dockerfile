@@ -7,8 +7,8 @@ ADD rootfs.tar.xz /
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set timezone
-#RUN echo "Europe/Moscow" > /etc/timezone
-#RUN dpkg-reconfigure -f noninteractive tzdata
+RUN echo "Europe/Simferopol" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Resolve problem with execution policy-rc.d
 RUN echo "exit 0" > /usr/sbin/policy-rc.d && chmod +x /usr/sbin/policy-rc.d
@@ -19,12 +19,13 @@ RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
 # Install packages
 RUN apt-get -qq -y --no-install-recommends install apt-utils runit
 RUN apt-get -qq -y --no-install-recommends install ssmtp bsd-mailx ntpdate
-RUN apt-get -qq -y --no-install-recommends install openssh-server openssh-client
 RUN apt-get -qq -y --no-install-recommends install git etckeeper sudo screen mc
-RUN apt-get -qq -y --no-install-recommends install cron 
+RUN apt-get -qq -y --no-install-recommends install openssh-server openssh-client
+RUN apt-get -qq -y --no-install-recommends install cron
+RUN apt-get -qq -y --no-install-recommends install nginx
 RUN apt-get -qq -y --no-install-recommends install icinga-core icli
 
-# Setup a simple root password
+# Setup a simple & stupid root password
 RUN echo "root:mypasswd" | chpasswd
 
 # Expose the SSH port
