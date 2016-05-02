@@ -22,13 +22,13 @@ Quick Start
 	git clone https://github.com/ZigFisher/MyDocker.git
 
 	# Build image from Dockerfile
-	docker build -t wheezy -f ./Dockerfile .
+	docker build -t jessie -f ./Dockerfile .
 
 	# You can see new builded image (wheezy)
 	docker images
 
 	# Create and start container
-	docker run -d -p 1022:22/tcp --name testserv wheezy
+	docker run -d -p 1022:22/tcp --name testserv jessie
 
 	# You can see new runing container (testserv)
 	docker ps
