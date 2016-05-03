@@ -22,7 +22,7 @@ Quick Start
 	git clone https://github.com/ZigFisher/MyDocker.git
 
 	# Build image from Dockerfile
-	docker build -t jessie -f ./Dockerfile .
+	docker build -t jessie -f ./Dockerfile_micro .
 
 	# You can see new builded image (jessie)
 	docker images
