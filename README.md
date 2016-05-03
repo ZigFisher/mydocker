@@ -22,16 +22,16 @@ Quick Start
 	git clone https://github.com/ZigFisher/MyDocker.git
 
 	# Build image from Dockerfile
-	docker build -t jessie -f ./Dockerfile_micro .
+	docker build -t micro -f ./Dockerfile_micro .
 
-	# You can see new builded image (jessie)
+	# You can see new builded image (micro)
 	docker images
 
 	# Create and start container
-	docker run -d -p 1022:22/tcp --name testserv jessie
+	docker run -d -p 1022:22/tcp --name myserver micro
 
-	# You can see new runing container (testserv)
-	docker ps
+	# You can see new runing container (myserver)
+	docker ps -a
 
 	# Enjoy ! >;)
 
