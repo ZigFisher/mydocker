@@ -19,7 +19,7 @@ RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
 # Install packages
 RUN apt-get -qq -y --no-install-recommends install  apt-utils runit
 RUN apt-get -qq -y --no-install-recommends install  dropbear sudo mc
-RUN apt-get -qq -y --no-install-recommends install  wget iperf nc
+RUN apt-get -qq -y --no-install-recommends install  wget iperf netcat
 
 RUN apt-get -qq -y --no-install-recommends install  default-jre-headless jsvc
 RUN wget http://www.ubnt.com/downloads/aircontrol/aircontrol_1.4.2-beta_all.deb &&\
