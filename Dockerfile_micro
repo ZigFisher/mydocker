@@ -25,11 +25,11 @@ RUN echo "root:mypass2016" | chpasswd
 # Expose the SSH port
 EXPOSE 22
 
-# Now make sure that runit will launch SSHD, via runit.
+# Now make sure that runit will launch SSH daemon, via runit.
 RUN mkdir -p /etc/service/dropbear /var/run/dropbear
 RUN /bin/echo -e '#!/bin/sh' > /etc/service/dropbear/run
 RUN /bin/echo -e 'exec 2>&1' >> /etc/service/dropbear/run
-RUN /bin/echo -e 'exec /usr/sbin/sshd -D' >> /etc/service/dropbear/run
+RUN /bin/echo -e 'exec /usr/sbin/dropbear -F' >> /etc/service/dropbear/run
 
 # Make sure our run-script is executable.
 RUN chown root.root /etc/service/*/run && chmod 755 /etc/service/*/run
