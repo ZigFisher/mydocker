@@ -37,5 +37,8 @@ RUN chown root.root /etc/service/*/run && chmod 755 /etc/service/*/run
 # Clean system
 RUN apt-get -qq -y clean
 
-# Launch runit.
+# Hard clean
+RUN rm -rf usr/{{lib,share}/locale} usr/share/{man,doc,info}
+
+# Launch runit
 ENTRYPOINT ["/usr/sbin/runsvdir-start"]
