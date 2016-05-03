@@ -24,9 +24,9 @@ RUN apt-get -qq -y --no-install-recommends install  apt-utils runit dropbear sud
 RUN apt-get -qq -y --no-install-recommends install  iperf traceroute wget
 #RUN apt-get -qq -y --no-install-recommends install openjdk-7-jre
 RUN apt-get -qq -y --no-install-recommends install  default-jre-headless jsvc
-RUN wget http://www.ubnt.com/downloads/aircontrol/aircontrol_1.4.2-beta_all.deb &&\
-    dpkg -i aircontrol_1.4.2-beta_all.deb &&\
-    rm aircontrol_1.4.2-beta_all.deb
+RUN wget http://www.ubnt.com/downloads/aircontrol2/aircontrol2-2.0-Beta18.1416.151204.1451-ubuntu.deb && \
+    dpkg -i aircontrol2-2.0-Beta18.1416.151204.1451-ubuntu.deb && \
+    rm aircontrol2-2.0-Beta18.1416.151204.1451-ubuntu.deb
 
 RUN sed -i -e's/JAVA_HOME=/#JAVA_HOME=/' /etc/init.d/aircontrol
 RUN sed -i -e's/export\ JAVA_HOME/#export JAVA_HOME/' /etc/init.d/aircontrol
