@@ -28,9 +28,9 @@ Quick Start
 	docker images
 
 	# Create and start container
-	docker run -d -p 1022:22/tcp --name myserver micro
+	docker run -d -p 1022:22/tcp --name testserv --hostname testserv micro
 
-	# You can see new runing container (myserver)
+	# You can see new runing container (testserv)
 	docker ps -a
 
 	# Enjoy ! >;)
