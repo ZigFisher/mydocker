@@ -27,7 +27,7 @@ RUN apt-get -y --no-install-recommends install nginx
 RUN apt-get -y --no-install-recommends install icinga-core icli
 #
 # Setup a simple & stupid root password
-RUN echo "root:mypasswd" | chpasswd
+RUN echo "root:mypass2016" | chpasswd
 #
 # Expose the SSH port
 EXPOSE 22

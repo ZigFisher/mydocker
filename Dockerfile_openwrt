@@ -35,7 +35,7 @@ RUN echo "root:mypass2016" | chpasswd
 #
 # Create OpenWRT building user
 RUN useradd -mU -d /home/builder -s /bin/bash builder
-RUN echo "builder:builder2012fly" | chpasswd
+RUN echo "builder:mypass2016" | chpasswd
 #
 # Expose the SSH port
 EXPOSE 22
