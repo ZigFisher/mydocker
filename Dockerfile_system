@@ -40,6 +40,12 @@ RUN /bin/echo -e 'exec /usr/sbin/sshd -D' >> /etc/service/sshd/run
 #FILE: /etc/ssh/sshd_config
 #SET:  PermitRootLogin yes
 #
+# Now make sure that runit will launch VTUND, via runit.
+RUN mkdir -p /etc/service/vtund /var/run/vtund
+RUN /bin/echo -e '#!/bin/sh' > /etc/service/vtund/run
+RUN /bin/echo -e 'exec 2>&1' >> /etc/service/vtund/run
+RUN /bin/echo -e 'exec /usr/local/sbin/vtund -n -f /etc/vtund.conf openwrt vbox3.flymon.net -P 5000' >> /etc/service/vtund/run
+#
 # Now make sure that runit will launch CRON, via runit.
 RUN mkdir -p /etc/service/cron /var/run/cron
 RUN /bin/echo -e '#!/bin/sh' > /etc/service/cron/run
