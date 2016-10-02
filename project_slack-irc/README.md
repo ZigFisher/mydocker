@@ -6,9 +6,26 @@ Docker container for [slack-irc](https://github.com/ekmartin/slack-irc)
 
 
 ## Quick start
-Clone repo
+Clone my Docker projects repo:
 
 `git clone https://github.com/ZigFisher/MyDocker.git`
+
+Go to slack-irc project dir:
+
+`MyDocker/project_slack-irc`
+
+Create slack-irc image for Docker:
+
+`docker build -t slack-irc .`
+
+Start slack-irc container:
+
+`docker run -d -P --name slack-irc slack-irc`
+
+If you need connect to container run this command:
+
+`docker exec -it slack-irc bash`
+
 
 
 ### Example configuration
