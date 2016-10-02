@@ -1,7 +1,7 @@
 MyDocker
 ========
 
-My view of the Docker (pre-alpha version).
+My view of the Docker project's (pre-alpha version).
 
 
 License
@@ -22,15 +22,15 @@ Quick Start
 	git clone https://github.com/ZigFisher/MyDocker.git
 
 	# Build image from Dockerfile
-	docker build -t micro -f ./Dockerfile_micro .
+	docker build -t project .
 
-	# You can see new builded image (micro)
+	# You can see new builded image (project)
 	docker images
 
 	# Create and start container
-	docker run -d -p 1022:22/tcp --name testserv --hostname testserv micro
+	docker run -d -p 1022:22/tcp --name project --hostname project project
 
-	# You can see new runing container (testserv)
+	# You can see new runing container (project)
 	docker ps -a
 
 	# Enjoy ! >;)

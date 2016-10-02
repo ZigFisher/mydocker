@@ -27,7 +27,6 @@ If you need connect to container run this command:
 	docker exec -it slack-irc bash
 
 
-
 ### Example configuration
 ```js
 [
