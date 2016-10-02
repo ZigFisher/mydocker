@@ -7,8 +7,7 @@ Docker container for [slack-irc](https://github.com/ekmartin/slack-irc)
 
 ## Quick start
 Clone my Docker projects repo:
-
-`git clone https://github.com/ZigFisher/MyDocker.git`
+	git clone https://github.com/ZigFisher/MyDocker.git
 
 Go to slack-irc project dir:
 
