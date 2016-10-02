@@ -6,9 +6,8 @@ Docker container for [slack-irc](https://github.com/ekmartin/slack-irc)
 
 
 ## Quick start
-Copy `slack-irc/config.json.sample` to `slack-irc/config.json` and change the config.
-
-`ircOptions` is passed directly to node-irc ([available options](http://node-irc.readthedocs.org/en/latest/API.html#irc.Client)).
+Clone repo
+`git clone https://github.com/ZigFisher/MyDocker.git`
 
 
 ### Example configuration
