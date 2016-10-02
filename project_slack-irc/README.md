@@ -20,7 +20,7 @@ Create slack-irc image for Docker:
 
 Start slack-irc container:
 
-	docker run -d -P --name slack-irc slack-irc
+	docker run -d -P --name slack-irc --hostname slack-irc slack-irc
 
 If you need connect to container run this command:
 
