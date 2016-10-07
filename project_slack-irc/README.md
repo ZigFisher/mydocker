@@ -35,7 +35,8 @@ If you need connect to container run this command:
     "server": "irc.forestnet.org",
     "token": "insert-slack-token-here",
     "channelMapping": {
-      "#wifi-iot": "#esp8266"
+      "#wifi-iot_com": "#esp8266",
+      "#mqtt-iot": "#mqttiot"
     }
   }
 ]
