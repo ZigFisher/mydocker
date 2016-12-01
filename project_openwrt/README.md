@@ -17,8 +17,8 @@ Create openwrt image for Docker:
 
 Start openwrt container with "normal" name and hostname:
 
-	docker run -d -P --name openwrt --hostname openwrt openwrt
+	docker run -d -P --restart=always --name openwrt --hostname openwrt openwrt
 
 If you need connect to container run this command:
 
-	docker exec -it openwrt bash
+	docker exec -it openwrt sh

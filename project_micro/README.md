@@ -17,8 +17,8 @@ Create micro image for Docker:
 
 Start micro container with "normal" name and hostname:
 
-	docker run -d -P --name micro --hostname micro micro
+	docker run -d -P --restart=always --name micro --hostname micro micro
 
 If you need connect to container run this command:
 
-	docker exec -it micro bash
+	docker exec -it micro sh

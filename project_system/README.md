@@ -17,8 +17,8 @@ Create system image for Docker:
 
 Start system container with "normal" name and hostname:
 
-	docker run -d -P --name system --hostname system system
+	docker run -d -P --restart=always --name system --hostname system system
 
 If you need connect to container run this command:
 
-	docker exec -it system bash
+	docker exec -it system sh

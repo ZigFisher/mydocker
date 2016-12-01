@@ -17,7 +17,7 @@ Create image:
 
 Start container with "normal" name and hostname:
 
-	docker run -d -p 2051:22/tcp --name alpine-3.4_base --hostname alpine-3.4_base alpine-3.4_base
+	docker run -d --restart=always -p 2051:22/tcp --name alpine-3.4_base --hostname alpine-3.4_base alpine-3.4_base
 
 If you need connect to container run this command:
 
