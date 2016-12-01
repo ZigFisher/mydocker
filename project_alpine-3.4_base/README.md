@@ -1,7 +1,7 @@
-Alpine <=> Docker | (base)
+Alpine-3.4_base <=> Docker
 ==========================
 
-## Quick start
+## Example start
 
 Clone my Docker projects repo:
 
@@ -22,3 +22,8 @@ Start container with "normal" name and hostname:
 If you need connect to container run this command:
 
 	docker exec -it alpine-3.4_base sh
+
+Quick uninstall:
+
+	docker stop alpine-3.4_base && docker rm alpine-3.4_base && docker rmi alpine-3.4_base
+
