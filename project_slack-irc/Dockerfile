@@ -1,5 +1,5 @@
 FROM node:0.12.7
-MAINTAINER ZigFisher "https://about.me/flyrouter"
+MAINTAINER Igor Zalatov "http://gravatar.com/flyrouter"
 
 # Slack irc version.
 ENV SLACK_IRC_VERSION=3.5.2
