@@ -21,4 +21,4 @@ Start openwrt container with "normal" name and hostname:
 
 If you need connect to container run this command:
 
-	docker exec -it openwrt sh
+	docker exec -it openwrt bash

@@ -21,4 +21,4 @@ Start micro container with "normal" name and hostname:
 
 If you need connect to container run this command:
 
-	docker exec -it micro sh
+	docker exec -it micro bash

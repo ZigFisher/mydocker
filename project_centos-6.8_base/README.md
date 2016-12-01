@@ -21,7 +21,7 @@ Start container with "normal" name and hostname:
 
 If you need connect to container run this command:
 
-	docker exec -it centos-6.8_base sh
+	docker exec -it centos-6.8_base bash
 
 Quick uninstall:
 

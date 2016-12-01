@@ -21,4 +21,4 @@ Start system container with "normal" name and hostname:
 
 If you need connect to container run this command:
 
-	docker exec -it system sh
+	docker exec -it system bash

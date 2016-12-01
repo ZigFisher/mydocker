@@ -24,7 +24,7 @@ Start slack-irc container with "normal" name and hostname:
 
 If you need connect to container run this command:
 
-	docker exec -it slack-irc sh
+	docker exec -it slack-irc bash
 
 
 ### Example configuration
