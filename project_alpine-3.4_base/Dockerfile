@@ -1,6 +1,6 @@
 FROM scratch
 MAINTAINER Igor Zalatov "http://gravatar.com/flyrouter"
-ADD ../rootfs.tar.gz /
-RUN apk search --no-cache dropbear sshpass && \
+ADD ../alpine-3.4_docker.tar.gz /
+RUN apk add --no-cache dropbear sshpass && \
     rm -rf /var/cache/apk/*
 CMD ["/sbin/init"]
