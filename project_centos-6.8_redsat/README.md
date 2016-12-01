@@ -17,7 +17,7 @@ Create image:
 
 Start container with "normal" name and hostname:
 
-	docker run -d --restart=always -p 2053:22/tcp --name centos-6.8_redsat --hostname centos-6.8_redsat centos-6.8_redsat
+	docker run -d --restart=always -p 2054:22/tcp --name centos-6.8_redsat --hostname centos-6.8_redsat centos-6.8_redsat
 
 If you need connect to container run this command:
 
