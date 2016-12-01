@@ -1,0 +1,10 @@
+[
+  {
+    "nickname": "irc-to-slack",
+    "server": "irc.forestnet.org",
+    "token": "insert-slack-token-here",
+    "channelMapping": {
+      "#wifi-iot": "#esp8266"
+    }
+  }
+]
