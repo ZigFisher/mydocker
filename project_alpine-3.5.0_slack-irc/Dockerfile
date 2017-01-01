@@ -6,7 +6,7 @@ RUN apk add --no-cache nodejs python
 RUN npm install -g slack-irc@3.9.0
 RUN mkdir -p /etc/slack-irc
 RUN rc-update add dropbear
-RUN rc-service dropbear start
+#RUN rc-service dropbear start
 RUN ln /usr/bin/dbclient /usr/bin/ssh
 RUN echo "root:alpine" | chpasswd
 RUN echo -e "Welcome to Alpine slack-irc micro gateway !\n" >/etc/motd
