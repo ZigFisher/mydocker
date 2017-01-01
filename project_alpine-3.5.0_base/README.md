@@ -1,5 +1,5 @@
-Alpine-3.5.0_base <=> Docker
-============================
+Alpine-3.5.0_base => Docker
+===========================
 
 ## Example start
 
@@ -17,7 +17,7 @@ Create image:
 
 Start container with "normal" name and hostname:
 
-	docker run -d --restart=always -p 2051:22/tcp --name alpine-3.5.0_base --hostname alpine-3.5.0_base alpine-3.5.0_base
+	docker run -d --restart=always -p 2051:22/tcp --name alpine-3.5.0_base --hostname alpine alpine-3.5.0_base
 
 If you need connect to container run this command:
 
