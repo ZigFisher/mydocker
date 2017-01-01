@@ -12,7 +12,7 @@ RUN echo -e "Welcome to Alpine slack-irc micro gateway !\n" >/etc/motd
 RUN rc-update add dropbear
 
 RUN apk add --no-cache ca-certificates nodejs python
-RUN npm set strict-ssl false
+#RUN npm set strict-ssl false
 RUN npm install -g slack-irc@3.9.0
 RUN mkdir -p /etc/slack-irc
 
