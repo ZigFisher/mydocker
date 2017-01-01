@@ -1,0 +1,33 @@
+[
+  {
+    "nickname": "FMon",
+    "server": "irc.forestnet.org",
+    "token": "insert-you-token-here",
+    "slackUsernameFormat": "$username",
+    "channelMapping": {
+      "#flyhub_org": "#flyhub",
+      "#mqtt-iot_ru": "#mqttiot",
+      "#narodmon_ru": "#narodmon",
+      "#wifi-iot_com": "#esp8266",
+      "#zftlab_org": "#zftlab"
+    },
+    "ircOptions": {
+      "floodProtection": false,
+      "floodProtectionDelay": 1000
+    }
+  },
+  {
+    "nickname": "NMon",
+    "server": "irc.forestnet.org",
+    "token": "insert-you-token-here",
+    "slackUsernameFormat": "$username",
+    "channelMapping": {
+      "#narodmon_ru": "#narodmon",
+      "#wifi-iot_com": "#esp8266"
+    },
+    "ircOptions": {
+      "floodProtection": false,
+      "floodProtectionDelay": 1000
+    }
+  }
+]
