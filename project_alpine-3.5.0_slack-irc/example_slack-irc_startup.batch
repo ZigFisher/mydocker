@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+#
+# After create file /etc/init.d/slack-irc run command: rc-update add slack-irc
+
+depend() {
+	use logger dns
+	after firewall
+}
+
+start() {
+	ebegin "Starting slack-irc gate"
+	(while true ; do sleep 5; /usr/bin/slack-irc -c /etc/slack-irc/config.json >/dev/null 2>&1; done) &
+	eend $?
+}
