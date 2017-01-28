@@ -27,6 +27,8 @@ RUN apt-get -y --no-install-recommends install nginx
 RUN apt-get -y --no-install-recommends install icinga-core icli
 RUN apt-get -y --no-install-recommends install upx
 #
+RUN apt-get -y --no-install-recommends dialog locales
+#
 # Install openwrt building packages
 RUN apt-get -y --no-install-recommends install build-essential gawk libncurses-dev subversion unzip zlib1g-dev
 RUN apt-get -y --no-install-recommends install libssl-dev openssl curl ca-certificates python flex gettext file

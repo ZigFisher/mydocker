@@ -8,7 +8,10 @@ RUN apk add --no-cache mc sshpass rsync ssmtp
 RUN sed -i "/need net/d" "/etc/init.d/dropbear"
 RUN ln /usr/bin/dbclient /usr/bin/ssh
 RUN echo "root:alpine" | chpasswd
-RUN echo -e "Welcome to Alpine micro server !\n" >/etc/motd
+RUN echo -e "Welcome to Alpine node-red server !\n" >/etc/motd
 RUN rc-update add dropbear
+
+RUN apk add --no-cache ca-certificates nodejs python
+RUN npm install -g node-red
 
 CMD ["/sbin/init"]
