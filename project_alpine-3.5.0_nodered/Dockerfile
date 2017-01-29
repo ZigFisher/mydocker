@@ -13,5 +13,6 @@ RUN rc-update add dropbear
 
 RUN apk add --no-cache ca-certificates nodejs python
 RUN npm install -g node-red
+RUN npm install -g node-red-dashboard
 
 CMD ["/sbin/init"]
