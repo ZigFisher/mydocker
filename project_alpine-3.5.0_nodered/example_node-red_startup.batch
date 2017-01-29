@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+#
+# After create file /etc/init.d/node-red run command: rc-update add node-red
+
+depend() {
+	use logger dns
+	after firewall
+}
+
+start() {
+	ebegin "Starting node-red"
+	(while true ; do sleep 5; /usr/bin/node-red -u /root/ >/dev/null 2>&1; done) &
+	eend $?
+}

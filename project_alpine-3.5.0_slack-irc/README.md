@@ -17,7 +17,7 @@ Create image:
 
 Start container with "normal" name and hostname:
 
-	docker run -d --restart=always -p 2052:22/tcp --name alpine-3.5.0_slack-irc --hostname alpine_slack-irc alpine-3.5.0_slack-irc
+	docker run -d --restart=always -p 2052:22/tcp --name alpine-3.5.0_slack-irc --hostname alpine-slackirc alpine-3.5.0_slack-irc
 
 If you need connect to container run this command:
 
