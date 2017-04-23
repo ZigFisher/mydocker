@@ -30,8 +30,9 @@ RUN apt-get -y --no-install-recommends install upx
 RUN apt-get -y --no-install-recommends dialog locales
 #
 # Install openwrt building packages
-RUN apt-get -y --no-install-recommends install build-essential gawk libncurses-dev subversion unzip zlib1g-dev
+RUN apt-get -y --no-install-recommends install build-essential gawk libncurses-dev subversion unzip zlib1g-dev 
 RUN apt-get -y --no-install-recommends install libssl-dev openssl curl ca-certificates python flex gettext file
+RUN apt-get -y --no-install-recommends install gcc-multilib
 #
 # Setup a simple & stupid root password.
 RUN echo "root:mypass2016" | chpasswd
