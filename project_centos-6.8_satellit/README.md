@@ -17,7 +17,7 @@ Create image:
 
 Start container with "normal" name and hostname:
 
-	docker run -d --restart=always -p 2054:22/tcp --name centos-6.8_satellit --hostname centos-satellit centos-6.8_satellit
+	docker run -d --restart=always -p 2055:22/tcp --name centos-6.8_satellit --hostname centos-satellit centos-6.8_satellit
 
 If you need connect to container run this command:
 
