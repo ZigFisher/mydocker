@@ -20,6 +20,8 @@ RUN apt-get -qq -y -u update && apt-get -qq -y -u upgrade
 RUN apt-get -qq -y --no-install-recommends install  apt-utils runit
 RUN apt-get -qq -y --no-install-recommends install  dropbear sudo mc
 RUN apt-get -qq -y --no-install-recommends install  wget iperf netcat
+RUN apt-get -qq -y --no-install-recommends install  cron ssmtp bsd-mailx
+RUN dpkg --purge postfix
 
 # Expose the SSH port
 EXPOSE 22

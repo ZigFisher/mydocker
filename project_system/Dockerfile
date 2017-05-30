@@ -25,6 +25,8 @@ RUN apt-get -y --no-install-recommends install git wget iperf netcat
 RUN apt-get -y --no-install-recommends install cron
 RUN apt-get -y --no-install-recommends install nginx
 RUN apt-get -y --no-install-recommends install icinga-core icli
+RUN apt-get -y --no-install-recommends install ssmtp bsd-mailx
+RUN dpkg --purge postfix
 #
 # Setup a simple & stupid root password
 RUN echo "root:mypass2016" | chpasswd
