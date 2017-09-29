@@ -5,18 +5,13 @@ MAINTAINER Igor Zalatov "http://gravatar.com/flyrouter"
 ADD debian_stretch_rootfs.tar.xz /
 #
 # Disable interactive
-#ENV DEBIAN_FRONTEND noninteractive
-ENV DEBIAN_FRONTEND="teletype" \
-  LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
-#
-# Set timezone
-RUN ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-RUN dpkg-reconfigure -f noninteractive tzdata
+ENV DEBIAN_FRONTEND noninteractive
 #
 # Update and upgrade
 RUN apt-get -y -u update && apt-get -y -u upgrade
 #
 # Install packages
+RUN apt-get -y --no-install-recommends install apt-utils
 RUN apt-get -y --no-install-recommends install systemd systemd-sysv \
   bsd-mailx cron git mc ntpdate openssh-server openssh-client ssmtp wget \
   collectd icinga-core icli nginx-light
@@ -36,6 +31,13 @@ RUN apt-get -y --no-install-recommends install build-essential gawk \
 # Create OpenWRT building user
 RUN useradd -mU -d /home/builder -s /bin/bash builder
 RUN echo "builder:mypass2016" | chpasswd
+#
+# Set timezone
+RUN ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+RUN dpkg-reconfigure -f noninteractive tzdata
+#
+# Other
+#RUN sed -i "/listen [::]:80 default_server;/d" "/etc/nginx/sites-available/default"
 #
 # Clean system
 RUN apt-get -y clean && rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* \
