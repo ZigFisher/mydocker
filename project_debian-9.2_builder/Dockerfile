@@ -14,7 +14,11 @@ RUN apt-get -y -u update && apt-get -y -u upgrade
 RUN apt-get -y --no-install-recommends install apt-utils
 RUN apt-get -y --no-install-recommends install systemd systemd-sysv \
   bsd-mailx cron git mc ntpdate openssh-server openssh-client ssmtp wget \
-  collectd icinga-core icli nginx-light
+#
+# Install monitoring
+RUN apt-get -y --no-install-recommends install nginx-light php-fpm fcgiwrap \
+  icinga-core icinga icinga-cgi icinga-cgi-bin \
+  monitoring-plugins-basic monitoring-plugins-standard
 #
 # Setup a simple & stupid root password.
 RUN echo "root:mypass2016" | chpasswd
