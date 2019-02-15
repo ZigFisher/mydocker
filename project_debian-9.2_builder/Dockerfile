@@ -21,7 +21,7 @@ RUN apt-get -y --no-install-recommends install nginx-light php-fpm fcgiwrap \
   monitoring-plugins-basic monitoring-plugins-standard
 #
 # Setup a simple & stupid root password.
-RUN echo "root:mypass2016" | chpasswd
+RUN echo "root:youpass" | chpasswd
 #
 #RUN apt-get -y --no-install-recommends install etckeeper sudo screen
 #RUN apt-get -y --no-install-recommends install iperf netcat upx
@@ -30,7 +30,8 @@ RUN echo "root:mypass2016" | chpasswd
 # Install openwrt building packages
 RUN apt-get -y --no-install-recommends install build-essential gawk \
   libncurses-dev subversion unzip zlib1g-dev libssl-dev openssl curl \
-  ca-certificates python flex gettext file gcc-multilib
+  ca-certificates python flex gettext file gcc-multilib \
+  tofrodos
 #
 # Create OpenWRT building user
 RUN useradd -mU -d /home/builder -s /bin/bash builder
