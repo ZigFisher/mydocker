@@ -13,7 +13,7 @@ RUN apt-get -y -u update && apt-get -y -u upgrade
 # Install packages
 RUN apt-get -y --no-install-recommends install apt-utils
 RUN apt-get -y --no-install-recommends install systemd systemd-sysv \
-  bsd-mailx cron git mc ntpdate openssh-server openssh-client ssmtp wget \
+  bsd-mailx cron git mc ntpdate openssh-server openssh-client ssmtp wget
 #
 # Install monitoring
 RUN apt-get -y --no-install-recommends install nginx-light php-fpm fcgiwrap \
